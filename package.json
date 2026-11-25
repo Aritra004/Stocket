@@ -5,22 +5,49 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:offline": "tsx offline-viewer/cli.ts",
+    "generate:offline": "tsx offline-viewer/generate-assets.ts",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "next typegen && tsc --noEmit",
+    "typecheck:offline": "tsc --project offline-viewer/tsconfig.json --noEmit",
+    "test": "tsx --test src/lib/*.test.ts src/lib/importer/*.test.ts src/lib/stocky/*.test.ts src/lib/storage/*.test.ts src/lib/payments/*.test.ts src/components/importer/*.test.ts src/components/dashboard/*.test.ts src/components/history/*.test.ts src/components/quality/*.test.ts offline-viewer/*.test.ts",
+    "test:payments": "tsx --test src/lib/payments/*.test.ts",
+    "test:offline": "tsx --test offline-viewer/*.test.ts",
+    "test:e2e": "playwright test",
+    "test:offline:browser": "playwright test --config offline-viewer/playwright.config.ts"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.119.2",
+    "@tanstack/react-table": "^8.21.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "dexie": "^4.4.7",
+    "fflate": "^0.8.3",
+    "lucide-react": "^1.77.0",
     "next": "16.4.6",
+    "papaparse": "^5.7.1",
+    "radix-ui": "^1.8.1",
+    "razorpay": "^2.9.8",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "server-only": "^0.0.1",
+    "tailwind-merge": "^3.7.1",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.6.0",
+    "@playwright/test": "^1.65.1",
     "@tailwindcss/turbopack": "4.3.3",
     "@types/node": "^20",
+    "@types/papaparse": "^5.5.2",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
+    "fake-indexeddb": "^6.2.8",
     "tailwindcss": "4.3.3",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   }
 }

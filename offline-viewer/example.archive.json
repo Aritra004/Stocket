@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "exportedAt": "2026-11-24T00:00:00.000Z",
+  "files": [],
+  "records": [],
+  "sources": [],
+  "findings": [],
+  "qualityNotes": ["This is an empty example archive. Export archive JSON from your local workspace to build a viewer with your own records."]
+}

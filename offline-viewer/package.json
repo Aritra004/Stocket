@@ -1,0 +1,19 @@
+{
+  "name": "stocky-history-rescue-offline-viewer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "tsx generate-assets.ts",
+    "build": "tsx cli.ts",
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "test": "tsx --test *.test.ts",
+    "test:browser": "playwright test --config playwright.config.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "@types/node": "^20",
+    "tsx": "^4.23.15",
+    "typescript": "^5"
+  }
+}
